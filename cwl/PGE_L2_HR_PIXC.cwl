@@ -13,7 +13,7 @@ inputs:
     type: File
     inputBinding: { position: 1 }
 
-baseCommand: [ /data/toil/pge/task.py, 'PGE_L2_HR_PIXC' ]
+baseCommand: [ task.py, 'PGE_L2_HR_PIXC' ]
 
 stdout: $(inputs.L1B_HR_SCL.nameroot).PGE_L2_HR_PIXC.txt
 outputs:

@@ -13,7 +13,7 @@ inputs:
     type: File
     inputBinding: { position: 1 }
 
-baseCommand: [ /data/toil/pge/task.py, 'PGE_L2_RIVER_TILE' ]
+baseCommand: [ task.py, 'PGE_L2_RIVER_TILE' ]
 
 stdout: $(inputs.L2_HR_PIXC.nameroot).PGE_L2_RIVER_TILE.txt
 outputs:
