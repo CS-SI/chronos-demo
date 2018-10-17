@@ -6,6 +6,10 @@ requirements:
     coresMax: 1
     ramMin: 100  # just a default, could be lowered
 
+hints:
+  DockerRequirement:
+    dockerPull: alpine
+
 class: CommandLineTool
 
 inputs:
@@ -13,7 +17,7 @@ inputs:
     type: File[]
     inputBinding: { position: 1 }
 
-baseCommand: [ /data/toil/pge/task.py, 'PGE_L2_RIV_SP' ]
+baseCommand: [ echo, 'PGE_L2_RIV_SP' ]
 
 stdout: $(inputs.L2_HR_RIVER_TILE[0].nameroot).PGE_L2_RIV_SP.txt
 outputs:
