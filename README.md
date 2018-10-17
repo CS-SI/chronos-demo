@@ -30,16 +30,6 @@ init_args.py input
 cwltool ~/chronos-demo/cwl/KARIN_HR.cwl args.json
 ```
 
-A Toil job Python script is also provided as an example. To run it, execute:
-
-```bash
-cd chronos-demo
-python hello_world_multi.py \
-    file:/data/toil/job_stores/my-job-store \
-    --batchSystem=mesos \
-    --mesosMaster=<mesos_master_host>:5050
-```
-
 ## Run on the cloud
 
 Safescale cloud management platform can be used to deploy a Toil-Mesos cluster automatically on a cloud provider infrastructure.
@@ -69,3 +59,13 @@ toil-cwl-runner \
 Output files are generated into current work directory.
 
 If required, run `toil clean /data/toil/job_stores/my-job-store/` to cleanup job store.
+
+A Toil job Python script is also provided as an example. To run it, execute:
+
+```bash
+cd chronos-demo
+python hello_world_multi.py \
+    file:/data/toil/job_stores/my-job-store \
+    --batchSystem=mesos \
+    --mesosMaster=<mesos_master_host>:5050
+```
