@@ -1,5 +1,6 @@
 #!/usr/bin/env cwl-runner
 cwlVersion: v1.0
+label: PGE_L2_RIVER_TILE
 
 requirements:
   ResourceRequirement:

@@ -1,5 +1,6 @@
 #!/usr/bin/env cwl-runner
 cwlVersion: v1.0
+label: PGE_L1B_HR_SLC
 
 requirements:
   ResourceRequirement:
