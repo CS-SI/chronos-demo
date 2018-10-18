@@ -52,11 +52,17 @@ See https://github.com/CS-SI/SafeScale
 
 Run `chronos_deploy.sh` to get a Mesos cluster up and running. The script also executes to required configuration to execute the CWL graph.
 
+```bash
+./chronos_deploy.sh fe  # Flexible Engine with 2 Mesos agent nodes
+./chronos_deploy.sh ovh 4  # OVH with 4 Mesos agent nodes
+```
+
 ### Run CWL graph
 
 ```bash
 # Start Safescale broker daemon
 brokerd
+broker tenant list
 broker tenant set ovh
 # List cluster host names
 broker host list|jq -r '.[].Name'

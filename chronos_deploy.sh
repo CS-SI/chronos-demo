@@ -1,12 +1,14 @@
-broker tenant set ovh
+broker tenant set $1
 deploy cluster chronos create -F DCOS -C Small --cidr 192.168.14.0/24
-deploy cluster chronos expand -n 2
+
+NODE_NB=${2:-2}
+[ -z $2 ] || deploy cluster chronos expand -n $(($NODE_NB - 2))
 
 install_script=$(cat<<- EOT
     useradd toil
     yum remove -y python-requests
-    yum group install -y  "Development Tools"
-    yum install -y python-devel nfs-utils
+    yum group install -y "Development Tools"
+    yum install -y python-pip python-devel
     pip install --upgrade setuptools pip
     python -m pip install --upgrade --no-cache-dir toil[mesos,cwl]
     git clone https://github.com/CS-SI/chronos-demo/ /home/toil/chronos-demo
@@ -28,7 +30,7 @@ cat<<-EOT | broker ssh connect chronos-master-1
     ${install_script}
 EOT
 
-for  num in {1..4} 
+for num in $(seq 1 $NODE_NB)
 do
 (cat<<-EOT | broker ssh connect chronos-node-${num}
     sudo -s
@@ -40,9 +42,9 @@ wait
 
 broker nas create --path="/data" chronos-nas chronos-master-1
 
-for  num in {1..4} 
+for num in $(seq 1 $NODE_NB)
 do
-broker nas mount chronos-nas chronos-node-${num}&
+    broker nas mount chronos-nas chronos-node-${num}&
 done
 wait
 
