@@ -1,9 +1,9 @@
 # CWL example
 
 See CWL graph rendered at
-https://view.commonwl.org/workflows/github.com/CS-SI/chronos-demo/blob/master/cwl/KARIN_HR.cwl
+https://view.commonwl.org/workflows/github.com/CS-SI/chronos-demo/blob/f4dff46/cwl/KARIN_HR.cwl
 
-![](https://view.commonwl.org/graph/png/github.com/CS-SI/chronos-demo/blob/master/cwl/KARIN_HR.cwl) 
+![](https://view.commonwl.org/graph/png/github.com/CS-SI/chronos-demo/blob/f4dff46/cwl/KARIN_HR.cwl) 
 
 ## Test locally
 
