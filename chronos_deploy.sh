@@ -6,8 +6,8 @@ install_script=$(cat<<- EOT
     useradd toil
     yum remove -y python-requests
     yum group install -y  "Development Tools"
-    yum install -y python-devel nfs-utils nfs-utils-lib
-    pip install --upgrade pip
+    yum install -y python-devel nfs-utils
+    pip install --upgrade setuptools pip
     python -m pip install --upgrade --no-cache-dir toil[mesos,cwl]
     git clone https://github.com/CS-SI/chronos-demo/ /home/toil/chronos-demo
     chown -R toil:toil /home/toil/chronos-demo
