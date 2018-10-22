@@ -110,6 +110,12 @@ Access to:
 
 ![](./img/mesos.png) 
 
+### RemoteDesktop
+
+Safescale cluster can also be accessed with a remote desktop.
+
+![](./img/remote_desktop.png)
+
 ### Run Python Toil graph
 
 A Toil job Python script is also provided as an example. To run it, execute:
