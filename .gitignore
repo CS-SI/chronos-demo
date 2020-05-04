@@ -1,3 +1,4 @@
 *.txt
 .idea
 work_*
+.ipynb_checkpoints
